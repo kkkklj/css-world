@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    h3{
+      /* text-align: center; */
+    }
+    h1{
+      text-align: center;
+    }
+    div{
+      text-align: center;
+    }
+    .box-1{
+      margin: 0 auto;
+      width: 400px;height: 400px;
+    }
+    .inner-1{
+      padding: 40px;
+      /* background-color: blue; */
+      border: 1px solid #000;
+      height: 100px;
+    }
+    .box-2{
+      margin: 0 auto;
+      box-sizing: border-box;
+      width: 400px;height: 400px;
+      padding: 40px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <h3>width 是作用在“内在盒子”上的。即作用在了 content box</h3>
+  <h3>宽度分离原则,CSS 中的 width 属性不与影响宽度的 padding/border（有时候包括 margin）属性共存</h3>
+  <h1>边框内留白</h1>
+  <div class="box-1">
+    <div class="inner-1">这是content这是content这是content这是content这是content内部盒子自适应，这样就不用计算宽度和了，不信你改外面的盒子宽度试试</div>
+  </div>
+  <h3>box-sizing用于改变width、height的细节，默认的width、height作用于conten-box，通过box-sizing来改变作用于哪个盒子。但目前除了conten-box,也就border-box有较好的支持</h3>
+  <h1>border-box实现边框内留白</h1>
+  <div class="box-2">
+      这是content这是content这是content这是content这是content这是content这是content这是content这是content这是content
+  </div>
+</body>
+</html>
