@@ -1,8 +1,9 @@
 # css世界学习总结
 ### line-height
-- 无论内联元素 line-height 如何设置，最终父级元素的高度都是由数值大的
+> 无论内联元素 line-height 如何设置，最终父级元素的高度都是由数值大的
 那个 line-height 决定的，我称之为“内联元素 line-height 的大值特性”。
-- 只要有“内联盒子”在，就
+
+> 只要有“内联盒子”在，就
 一定会有“行框盒子”
 ```html
 <div class="box">
