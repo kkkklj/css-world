@@ -42,8 +42,15 @@ max-height的收拉
 img { visibility: hidden; }
 img[src] { visibility: visible; }
 ```
-注意，这里的<img>直接没有 src 属性，再强调一遍，是直接没有，不是 src=""， src=""
+注意，这里的img标签直接没有 src 属性，再强调一遍，是直接没有，不是 src=""， src=""
 在很多浏览器下依然会有请求，而且请求的是当前页面数据。当图片的 src 属性缺省的时候，
 图片不会有任何请求，是最高效的实现方式。
-> 好了，最后和标题再呼应下，替换元素和非替换元素的距离有多远？就是 src 或 content
-那一点。
+> 好了，最后和标题再呼应下，替换元素和非替换元素的距离有多远？就是 src 或 content那一点。
+## padding
+>> 很多人可能有这样的误区，认为设置了 box-sizing:border-box， 元素尺寸就不会变化。大多数情况下是这样的，但是，如果 padding 值足够大，那么 width 也无能为力了。
+- 内联元素没有可使宽度和高度（clientHeight和clientWidth永远是0），垂直方向的行为完全受line-height和vertical-align影响。
+- 对于内联元素来说，padding是会存在的，但它的padding不会影响文档流，甚至可以理解为它的padding就不存在文档流中，虽然我们可以用background-color让它显示出来。但是非常神奇的是，该内联元素的父元素设置overflow:auto的时候，却能出现滚动条。
+>> 由此可见，内联元素 padding 对视觉层和布局层具有双重影响，所有类似“垂直方向padding 对内联元素没有作用”的说法显然是不正确的。
+- 内联元素padding妙用，在不影响文档流的情况下改变内联元素的位置（锚点定位遇到fixed导航）
+- padding百分比是按照宽度计算的
+*** 科普一下，offsetHeight/offsetWidth（包含padding和border），clientHeight/clientWidth（包含padding但不包含border） ***
