@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      overflow: hidden;
+    }
+
+    .son {
+      margin: 100px 0;
+    }
+
+    .father2 {
+      overflow: hidden;
+    }
+
+    .son2 {
+      height: 1px;
+      margin: 100px 0;
+    }
+
+    p {
+      margin: 50px 0;
+    }
+
+    .demo-img {
+      margin: 50px;
+    }
+
+    .box1 {
+      height: 100px;
+    }
+
+    .child1 {
+      height: 80px;
+      margin-bottom: 100px;
+    }
+
+    .test1 {
+      background: #6666;
+      height: 20px;
+    }
+
+    .flex-box1 {
+      display: flex;
+    }
+
+    .box2 {
+      width: 100px;
+    }
+
+    .child2 {
+      width: 80px;
+      margin-right: 100px;
+    }
+
+    .test2 {
+      height: 20px;
+      width: 20px;
+      background: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <div>
+    这里的father只有100px的原因在css世界里是这样解释的
+  </div>
+  <div style="color: #6666;">
+    结果，此时.father 所在的这个父级div元素高度仅仅是 1em(100px)，因为.son 这个空div元
+    素的 margin-top 和 margin-bottom 合并在一起了。这也是上一节 margin:50%最终宽高
+    比是 2:1 的原因，因为垂直方向的上下 margin 值合二为一了，所以垂直方向的外部尺寸只有
+    水平方向的一半。
+  </div>
+  <div>
+    我的补充：这么看来上下margin会合并的原因是因为content-box高度为0或者说content-box不存在
+  </div>
+  <div class="father2">
+    <div class="son2"></div>
+  </div>
+  <div>
+    另外一个同样有意思的例子如下
+  </div>
+  <div style="color: #6666;">
+    其实，就算兄弟不相邻，也是可以发生合并的，前提是中间插手的也是个会合并的家伙。
+  </div>
+  <p>第一行，我们中间有个div</p>
+  <div></div>
+  <p>第二行，我们中间有个div</p>
+  <h3>对于内联替换元素，垂直 margin 有效，并且没有 margin 合并的问题，所以图片永远不会发生 margin 合并。</h3>
+  <img class="demo-img" src="../img/gotop.png" alt="">
+  <img class="demo-img" src="../img/gotop.png" alt="">
+  <!--  -->
+  <h3>定高容器的子元素的margin-bottom会失效,你看child1的margin-bottom没有把test1撑走</h3>
+  <div class="box1">
+    <div class="child1">child1</div>
+  </div>
+  <div class="test1">test1</div>
+  <!--  -->
+  <h3>者宽度定死的子元素的 margin-right 的定位“失效”。下面那个child2margin-right有100px的，但实际根本没撑开</h3>
+  <div class="flex-box1">
+    <div class="box2">
+      <div class="child2">child2</div>
+    </div>
+    <div class="test2"></div>
+  </div>
+</body>
+
+</html>

@@ -54,3 +54,6 @@ img[src] { visibility: visible; }
 - 内联元素padding妙用，在不影响文档流的情况下改变内联元素的位置（锚点定位遇到fixed导航）
 - padding百分比是按照宽度计算的
 *** 科普一下，offsetHeight/offsetWidth（包含padding和border），clientHeight/clientWidth（包含padding但不包含border） ***
+- margin只有元素的尺寸表现符合“充分利用可利用空间”的时候才可以改变尺寸大小。
+- margin合并规则总结为“正正取大值”“正负值相加”“负负最负值”
+
