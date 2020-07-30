@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      line-height: 256px;
+    }
+
+    .box1 {
+      line-height: 96px;
+      background: #f0f3f9;
+      margin: 0 auto;
+      width: 200px;
+    }
+
+    .box1 span {
+      line-height: 20px;
+    }
+
+    .box2 {
+      line-height: 20px;
+      background: #f0f3f9;
+      margin: 50px auto;
+      width: 200px;
+    }
+
+    .box2 span {
+      line-height: 96px;
+    }
+  </style>
+</head>
+
+<body>
+  <h5>这里的line-height会把box给撑到256px的原因是,lin-height作用的是行框盒子前面的宽度为0的幽灵空白节点的的行高。幽灵空白节点的内联特性和普通文字一模一样</h5>
+  <div class="box">
+    <img src="https://img.yzcdn.cn/vant/cat.jpeg" height="128px">
+  </div>
+  <h5>幽灵节点撑起内联行高</h5>
+  <div class="box1">
+    <span>注意这个内联的行高只有20px</span>
+  </div>
+  <div class="box2">
+    <span>这个是line-height为96px的内联</span>
+  </div>
+</body>
+
+</html>

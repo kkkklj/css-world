@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .t1 {
+      color: #1919;
+      border: solid;
+    }
+
+    .t2 {
+      width: 120px;
+      height: 20px;
+      border-top: 60px #e4393c double;
+      border-bottom: 20px #e4393c solid;
+    }
+
+    .t3-father {
+      position: relative;
+      border: 1px solid #0000;
+      height: 100px;
+    }
+
+    .t3-child {
+      width: 20px;
+      height: 20px;
+      border: 100px rgba(86, 107, 105, 0.5) solid;
+      position: absolute;
+      left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="t1">border-color默认值是字体颜色,</div>
+  <h5>3横杆实现</h5>
+  <div class="t2"></div>
+  <div class="t3-father">
+    <div class="t3-child"></div>
+  </div>
+</body>
+
+</html>
